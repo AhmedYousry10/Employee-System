@@ -4,7 +4,7 @@
   <!-- Search Input -->
   <div class="search-bar">
     <div class="addEmp">
-      <app-add-employee></app-add-employee>
+      <app-add-employee (employeeAdded)="getAllEmployees()"></app-add-employee>
     </div>
 
     <div class="search">
