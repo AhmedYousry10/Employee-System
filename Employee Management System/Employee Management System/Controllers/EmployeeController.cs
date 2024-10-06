@@ -3,11 +3,14 @@ using Employee_Management_System.IService;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using System;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Employee_Management_System.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    /*[Authorize (Roles = "Admin")]*/
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _employeeService;
