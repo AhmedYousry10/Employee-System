@@ -72,7 +72,7 @@ export class AddEmployeeComponent implements OnInit {
   setEmployeeAcriveStatus(val: 'true' | 'false') {
     this.employee.isActive = val === 'true';
   }
-
+  // Add employee Method
   addEmployee() {
     this.employeeService.createEmployee(this.employee).subscribe(() => {
       this.messageService.add({
