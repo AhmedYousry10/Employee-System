@@ -1,0 +1,53 @@
+<div class="employee-list">
+  <h2>{{ title }}</h2>
+  
+  <!-- Search Input -->
+  <div class="search-bar">
+    <div class="addEmp">
+      <app-add-employee></app-add-employee>
+    </div>
+    
+    <div class="search">
+      <input
+        type="text"
+        pInputText
+        [(ngModel)]="searchQuery"
+        (ngModelChange)="onSearch()"
+        placeholder="Search by name"
+        class="p-inputtext-sm"
+      />
+    </div>
+  </div>
+
+  <!-- Employee Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Department</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of paginatedEmployeeList">
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.phoneNumber || 'N/A' }}</td>
+        <td>{{ employee.department }}</td>
+        <td [ngStyle]="{ 'background-color': employee.isActive ? 'green' : 'red', 'color': 'white' }">
+          {{ employee.isActive ? 'Active' : 'Inactive' }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Paginator -->
+  <p-paginator
+    [rows]="rows"
+    [totalRecords]="filteredEmployeeList.length"
+    [first]="first"
+    (onPageChange)="onPageChange($event)"
+  ></p-paginator>
+</div>

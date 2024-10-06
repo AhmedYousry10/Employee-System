@@ -1,0 +1,39 @@
+<h2>Employee Dashboard</h2>
+
+<mat-grid-list cols="3" rowHeight="100px" gutterSize="20px">
+  <mat-grid-tile>
+    <mat-card class="dashboard-card" matRipple>
+      <mat-card-header>
+        <mat-icon>people</mat-icon>
+        <mat-card-title>Total Employees</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <h3>{{ totalEmployees }}</h3>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-card class="dashboard-card" matRipple>
+      <mat-card-header>
+        <mat-icon>check_circle</mat-icon>
+        <mat-card-title>Active Employees</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <h3>{{ activeEmployees }}</h3>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-card class="dashboard-card" matRipple>
+      <mat-card-header>
+        <mat-icon>cancel</mat-icon>
+        <mat-card-title>Inactive Employees</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <h3>{{ inactiveEmployees }}</h3>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

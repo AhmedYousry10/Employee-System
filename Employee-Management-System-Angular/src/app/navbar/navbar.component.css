@@ -1,0 +1,61 @@
+.nav-container{
+  background: #000;
+}
+
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml,...');
+}
+
+.navbar-brand{
+  color: #fff;
+}
+
+.navbar-brand img{
+  width: 50px;
+  height: 50px;
+}
+
+.navbar {
+  padding: 0.25rem 2rem;
+  background: var(--background-color);
+}
+
+@media (max-width: 1200px) {
+  .navbar {
+    margin: 0;
+  }
+}
+.nav-link {
+  color: white;
+  margin-right: 30px;
+}
+
+.nav-link.active {
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+.signup {
+  background: var(--main-color);
+  border-color: var(--main-color);
+  padding: 10px 10px;
+  font-weight: bold;
+  border-radius: 18px;
+}
+
+.signup:hover {
+  background-color: var(--main-color-hover);
+  border-color: var(--main-color-hover);
+  cursor: pointer;
+}
+
+.signup img {
+  margin-right: 5px;
+
+}
+
+

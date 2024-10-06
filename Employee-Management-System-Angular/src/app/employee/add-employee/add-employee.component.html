@@ -1,0 +1,52 @@
+<p-button (click)="showAddModal()" label="Add Employee" styleClass="custom-button"></p-button>
+
+<p-dialog header="Add Employee" [(visible)]="displayAddModal" [style]="{ width: '30rem' }" modal="true">
+  <span class="p-text-secondary block mb-3 modal-description">Add New Employee</span>
+  
+  <div class="form-group">
+    <label for="fullName" class="form-label">Full Name</label>
+    <input pInputText id="fullName" [(ngModel)]="employee.name" class="form-input" autocomplete="off" required />
+  </div>
+  
+  <div class="form-group">
+    <label for="email" class="form-label">Email</label>
+    <input pInputText id="email" [(ngModel)]="employee.email" class="form-input" autocomplete="off" required />
+  </div>
+  
+  <div class="form-group">
+    <label for="password" class="form-label">Password</label>
+    <input pInputText id="password" [(ngModel)]="employee.password" class="form-input" autocomplete="off" required />
+  </div>
+  
+  <div class="form-group">
+    <label for="phoneNumber" class="form-label">Phone Number</label>
+    <input pInputText id="phoneNumber" [(ngModel)]="employee.phoneNumber" class="form-input" autocomplete="off" required />
+  </div>
+  
+  <div class="form-group">
+    <label for="department" class="form-label">Department</label>
+    <select id="department" [(ngModel)]="employee.department" class="form-input" required>
+      <option *ngFor="let dept of departments" [value]="dept">{{ dept }}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="dateOfJoining" class="form-label">Date Of Joining</label>
+    <input type="date" id="dateOfJoining" [(ngModel)]="employee.dateOfJoining" class="form-input" required />
+  </div>
+
+  <div class="form-group">
+    <label for="isActive" class="form-label">Is Active</label>
+    <select id="isActive" [(ngModel)]="employee.isActive" class="form-input" required>
+      <option *ngFor="let option of isActiveOptions" [value]="option.value">{{ option.label }}</option>
+    </select>
+  </div>
+
+  <div class="modal-footer">
+    <p-button label="Cancel" severity="secondary" (click)="hideAddModal()" styleClass="modal-cancel-button"></p-button>
+    <p-button label="Save" (click)="addEmployee()" styleClass="modal-save-button"></p-button>
+  </div>
+</p-dialog>
+
+<p-toast></p-toast>
+<p-confirmDialog></p-confirmDialog>

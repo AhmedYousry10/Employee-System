@@ -1,0 +1,65 @@
+::ng-deep .custom-button {
+  background-color: #2fa578;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  outline: none;
+}
+
+::ng-deep .custom-button:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+::ng-deep .custom-button:focus {
+  outline: none;
+}
+
+::ng-deep .form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  /* gap: 1rem; */
+}
+
+::ng-deep .form-label {
+  font-weight: bold;
+  width: 7rem;
+  flex-shrink: 0;
+}
+
+::ng-deep .form-input {
+  flex-grow: 1;
+}
+
+::ng-deep .modal-description {
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+::ng-deep .modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+::ng-deep .modal-cancel-button,
+::ng-deep .modal-save-button {
+  min-width: 6rem;
+}
+
+::ng-deep .modal-cancel-button {
+  background-color: #64748b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+::ng-deep .modal-save-button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
