@@ -1,12 +1,12 @@
 <div class="employee-list">
   <h2>{{ title }}</h2>
-  
+
   <!-- Search Input -->
   <div class="search-bar">
     <div class="addEmp">
       <app-add-employee></app-add-employee>
     </div>
-    
+
     <div class="search">
       <input
         type="text"
@@ -17,6 +17,11 @@
         class="p-inputtext-sm"
       />
     </div>
+  </div>
+
+  <!-- Display message if no employees -->
+  <div *ngIf="paginatedEmployeeList.length === 0" class="no-employees">
+    There are no employees at the moment.
   </div>
 
   <!-- Employee Table -->
@@ -45,6 +50,7 @@
 
   <!-- Paginator -->
   <p-paginator
+    *ngIf="filteredEmployeeList.length > 0"
     [rows]="rows"
     [totalRecords]="filteredEmployeeList.length"
     [first]="first"
