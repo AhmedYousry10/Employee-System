@@ -5,6 +5,7 @@ import { EmployeeService } from '../../sharedFiles/Services/employee.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterModule } from '@angular/router';
 import { AddEmployeeComponent } from "../add-employee/add-employee.component";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-employee-list',
@@ -60,5 +61,37 @@ export class EmployeeListComponent implements OnInit {
     this.paginateEvents();
   }
 
+  // deleteEmployee
+  deleteEmployee(email: string): void {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.employeeService.deleteEmployee(email).subscribe(() => {
+          this.getAllEmployees();
+
+          Swal.fire(
+            'Deleted!',
+            'The employee has been deleted.',
+            'success'
+          );
+        }, (error) => {
+          console.error('Error deleting employee:', error);
+
+          Swal.fire(
+            'Error!',
+            'Failed to delete the employee.',
+            'error'
+          );
+        });
+      }
+    });
+  }
 
 }
