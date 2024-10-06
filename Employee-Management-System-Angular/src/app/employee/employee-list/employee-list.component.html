@@ -33,6 +33,7 @@
         <th>Phone Number</th>
         <th>Department</th>
         <th>Status</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -43,6 +44,10 @@
         <td>{{ employee.department }}</td>
         <td [ngStyle]="{ 'background-color': employee.isActive ? 'green' : 'red', 'color': 'white' }">
           {{ employee.isActive ? 'Active' : 'Inactive' }}
+        </td>
+        <td>
+          <button class="btn btn-primary me-1" >Update</button>
+          <button class="btn btn-danger" >Delete</button>
         </td>
       </tr>
     </tbody>
